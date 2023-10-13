@@ -1,0 +1,6 @@
+
+in callcentre2 - how to deal with the date thing in power query
+               - is it possible to automatically update the header
+               - what is fuzzy matching in merging query
+
+

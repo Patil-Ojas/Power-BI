@@ -1,0 +1,44 @@
+rip dbms book
+
+keys - attribute to identify unqiue tuples of a table
+eg - student registration number / aadhar number
+
+all possible options is called set of cadidate key
+primary key is selected from this set of candidate key
+left out keys are alternative keys
+
+primary key = unique + not null
+
+foreign key - references primary key, table can have multiple fk's 
+            - maintains referential integrity
+            - ie, maintains same value across all database
+
+types of attributes - single / multivalued
+                    - simple / composite
+                    - stored / derived
+                    - key / non-key
+                    - required / optional 
+
+
+Cardinality / Types of Relationship - Relationship btwn two entities
+                                    - One to One -- given two tables emp and dept
+                                                 -- the new table works will have the pks of BOTH tables as columns
+                                                 -- each employee works for a single company and for each company there is an employee working for it
+                                                 -- neither pk can be repeated
+                                                 -- either of the pk can become the pk of combined table
+                                                 -- the works table can be merged to either of the two tables (2 final tables)
+                                    - One to Many -- given two table customer and orders
+                                                  -- a single customer can give many orders
+                                                  -- but an order can be placed by one customer only
+                                                  -- the new pk of gives HAS to be the pk of the M side, ie orders
+                                                  -- gives and orders can be merged into a single table (final 2 tables)
+                                    - Many to One -- Reverse of One to Many
+                                                  -- Many side pk will be new pk
+                                                  -- may side table will merge with middle table (final 2 tables)
+                                    - Many to Many -- given two tables student and course
+                                                   -- a student can take multiple courses
+                                                   -- a course can be registered by multiple students
+                                                   -- study table will have pk from both table, but the pk of study will be the composite of the two pk's
+                                                   -- these tables cannot be merged (final 3 tables)
+                    
+

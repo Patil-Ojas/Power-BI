@@ -1,0 +1,84 @@
+
+
+Time for AI, get exciteddddddddd
+
+
+anamoly detection - iykyk
+                  - only supported for line charts with time series, long ass list bruh
+                  - honestly, if u wanna use it just make a new bar chart cuz this thing is picky as fuck
+                  - also in visuals dropdown it shows the issue it is facing for not appearing
+                  - if u manage to obtain anamoly do smthing with possible explaination and then bookmark that shit and then i button
+        
+smart narratives - kinda summary, report narrative:
+                 - honestly just do this and put i's everywhere, umm maybe not apparently they ass
+                 - this shit is also dynamic, click lightning box for dynamic visual
+                 - ah i think the nlp option is only for signed in ppl
+                 - looks shit but later
+                 - also kinda summary visual narrative:
+                 - right click then summarize
+                 - also can be done via properties, smart narrative, appears like tooltip
+                 - aha end advice alr thought of, riksy shit not advised
+
+Q & A Visuals - slloed users to explore and visualize via nlp's
+              - we gotta train the model via prompts, via keywords, synonyms, example questions
+              - blue underline means power bi successfully identified, red line means it made a guess
+              - double red line means it gives up
+              - even blue can be wrong, duh
+              - hide pointless synonyms
+              - manage terms for overview of created synonyms
+              - review questions, data after model is published and used by users, other stats etc
+              - teach q&a, create bicycle for bike
+              - suggest q&a, save pre made questions
+              - if we are satisfied w result, we can even convert it into a normal chart with pelican icon (will this be the thing which get bailed out high score)
+
+
+Decomposition trees - allows us to visualizee across multiple dimensions
+                    - this shi also cleannn
+                    - yeah we not pulling cards and shi
+                    - also allows drill thru
+                    - high value and low value is where ai is at
+                    - changing absolute to relative, but kinda eh
+
+
+Key Influencers - most powerful apparently, helps us understand factors which cause sm special outcome
+                - analyze is given binary yes no tabular data, ie categorical not c~
+                - expplain by anything which might be a factor 
+                - strength values are derived by comparing
+                - we can toggle over to top segments, kinda good
+        
+
+
+optimization in power bi 
+
+these are generally more useful for direct query connection models (umm)
+
+pause visuals - ok so not only do we need the pause visuals tab but we also need to enable edit interactoins
+              - so what happens is for each click the entire dashboard gets updated, however if we wanna do two three click and then want dashboard to update, this is what we need.
+              - we get manualy and global refresh options
+              - kpi's are not affteced by line chart since we disabled interactions between them, we can crosscheck this by pending visual changes
+              - we cant format the visual if it is pending state
+
+
+optimization presets - query reductions, best for direct connections, can be customised
+                     - turns of cross highlihgting and cross filtering
+                     - so the dynamic part of the report is gone, smthing to do with filters which didnt feel imp
+                     - we can customize this
+        
+
+apply all slicers - so we can apply and remove all slicers in a single click
+                  - all or nothing approach, for each page
+                  - so like if we got 8 slicers and 10 cards, we dont need 80 changes right so we do this method, which needs 8 only
+
+
+performance analyser -  reports all benind the scenes actions when anythings gets updated
+                     - ~ excels macro book editor
+                     - query load time, visual load time, direct query analyser
+                     - dax query - how  long do dax engines need to process our code
+                     - visual display - how long for that visual to render
+                     - other - how long for other visuals to render and other processing tasks
+
+external tools - we need them installed on our local machine first 
+               - semantic modelling: DAX studio, tabular editor, alm toolkit, bravo
+               - data analysis: python, excel, power bi report builder 
+               - misc: pbi.tips tutorials, DAX Guide, PowerBI.tips
+

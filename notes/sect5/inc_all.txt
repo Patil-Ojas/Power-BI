@@ -1,0 +1,193 @@
+
+
+DAX - Data Analysis Expressions
+    - formula language that drives the power bi front end
+
+done via data view
+calculated coulumns - new columns which actually live isnide table, used for filtering
+measures - used in visuals for aggregation
+no a1 style references (?)
+
+difference in dax code and m code 
+M - power query editor (back end)
+dax code - power bi front end 
+
+Calculated columns - allows us to add new formula based columns in a model
+                   - generate values for each row
+                   - understand row context, good for defining properties based on each row info
+                   - useless for aggregation
+                   - useful for grouping and filtering Data
+                   - ahh lengthy ass one, so cc understand row context, aggregation funct dont understand that
+                   - so if we use sum() we get a static stamp column, ie column with repeating totals and guess whattt, yup thats bad 
+
+
+Measures - Dax formulas used to generate new nuerically caluculated values
+         - they aint visible in tables, can only be seen in visualization
+         - we shld use measures when we want to aggregate
+         - like cc is evaluated based on row context, measures are evaluated based on filter context, ie when filters change in visualization the values of measures also changes
+         - the sum or order quantity in values of any visual: implicit measure, implicit? uh oh
+         - implicit -- the ones we create by dragging shit in visualization things and manually selecting aggregation mode
+                    -- these cannot be used anywhere in the model
+         - explicit -- defined when we actually write dax formulas to create a new measure
+                    -- can be used anywhere in the report
+                    -- can be used to create measure trees
+         - whenever u define a measure (report view), make sure its format is corect and choose comma (why?), ohh cuz like 23,524 yes
+         - we can reassgin table for measures
+         - better to use explicit whenever possible
+
+symbols - calculator, measure
+        - calender with dx, calculated column
+        - sigma, when power bi feels its a columnw hich can be aggregated
+
+
+quick measures - automatically creaes formulaes based on pre built templates or nl prompts
+               - calucations used to build measures
+               - suggestions used to find measures based on nl queries
+               - great tool, but shld be used with cation cuz we need deep understanding to check if the quick measure is returning a correct value of not
+            
+cc vs mes
+
+dedicated measures table - power query, home, enter data, give name, load, table1
+                         - using dax, give command, table2
+                         - now here both tables look similar, but when we go into tranform data only the table1 will be visible
+                         - thus enter data method superior
+                         - ok now we make use of measure table reassigning, mmove all measures to measure table
+                         - when we move and yeet the auto generated column, the symbol changes from calender to calc
+                         - now by going into model view, we can categorize these into folders via the properties pane
+
+
+filter context - what the measures are evaluated based upon
+               - so for each cell of the matrix the filter context is understandable via the column name and row name
+               - however, for the grand total row, ie last row, the sum is not the actual sum
+               - the filter context does not apply to the final row, thus we grasp that each measure value of the report is calculated independently based on its own filter context
+               - we can click on the upside down funnel to gain more insights on the filter context being utilized
+               - year 2021-2022 page lvl filter, affects everything on the report page, so changing this will change everything
+               - 81 kinda eh - so basically using hidden condition kinda is filter context?
+               - so whenever we drill into somethign everything on page kinda changed, this is cuz of the hidden filter context for each visual, at least that is my initial understanding
+
+step by step dax measure calc - step1: filter context detection and application
+                              - step2: filter flows downstream to other related tables
+                              - step3: performs the function only on the filtered downstream table not on the entire table
+
+aight moving on to the core dax language
+
+dax syntax - cc dont need func like sum(), while measures do
+           - measurename:=functionanme(tablename[columnname])
+           - table with spaces need to be put in quotes
+           - column references use both table and column names, while measure references uses only measure name
+           
+common operators - arithmatic, comparison, text/logical 
+                 - some are &, &&, ||, IN (concatenates, and, or, or based on list)
+                 - https://learn.microsoft.com for more
+
+
+function categories - math and stats - aggregation and iterators (x fns)
+                    - logicals (conditionals)
+                    - text - manipulate text strings or value formats
+                    - filter - manipulate table and filter contexts 
+                    - table - create andmanipulate tables
+                    - date and time - date and time values and time intelligence
+                    - relationships - we can use active and inactive relationships with the help of dax code
+                    - and many more plus i will not be writing the common examples
+
+matha and stats - sum, avg, max, min
+                - divide - division and returns alt result (did i alr do this smwhere?), (maybe not)
+                - kawai
+
+
+counting - count
+         - counta
+         - distinctcount
+         - countrows (table in power bi is a table with single column or multiple columns)
+         - in order to count how many times customers have returned items - Total Returns
+         - u can crosscheck some of these via column profiling or extra stats at bottom of page
+         - this intuition of asking question and using the correct function for it is guess what super important aha
+
+chotto mate, perhaps (yoinked from cutomer lookup instead of sales nothing can go wrong right) LMAOOOOO
+nt so yea repeating shit is bad
+yo no way right (missed else)
+lessssssgo
+
+
+logical functions - if
+                  - iferror, ie exception handling
+                  - switch, normal switch, can be used for non standard calenders, we can do complex shit by true(), but like why.
+                  - and 
+                  - or
+                  - use && and || for multiple ands and ors, plus more readable
+        
+
+text functions - len
+               - concatenate (use & instead)
+               - upper/lower
+               - left/right/mid (returns x no of chars from left/right/mid, default 1)
+               - substitute (replace)
+               - search (returns index of character of start of string)
+
+
+honestly in the end i gotta refer the damm pdf then what is the use of this i wonder, we chillin
+
+
+basci date and time - today, now
+                    - day, month, year
+                    - hour, minute, second
+                    - weekday, weekno of year, updates shit (date+/-int)
+                    - eomonth (end of, gives last date of curr month), -1 gives last date of prev month, +1 next month
+                    - date diff, returns difference and allows slicing btwn two dates
+                    - list declared kinda: IN {6, 7}
+
+Related - works on the one side of 1-m relationship
+        - so we need to be on the many side for this to work
+        - related(columnName)
+        - works like VLOOKUP woooooo, even better cuz power bi knows the relationship btwn tables
+        - used for cc or with iterator
+        - dont go overboard
+        - ok so basically lets u yoink any column as u want i think, as long as it is on the 1- side
+
+
+Calculate - modifies our filter context
+          - caluclate(expression, [filter1], [filter2])
+          - filter are conditions, which must return to boolean value
+          - kinda "calculateif"
+          - calculate owns filter context, when both cant be logically correct at the same time (like being rasicst and not genie), ie it modifies and ovverules any competing filter context
+          - this can lead to repeating grand total values, red bulling black
+
+
+which function is doing what exactly is nuance to understand
+
+ok if this is correct idk what ima do, very very close nt nt
+well done
+
+all - returns all rows or values of column, ignoring all filters applied
+    - kinda like a remove/ignore filters function
+    - ALL(table/column, [column2], [column3])
+    - all columns must come from the same table
+    - returns a table or subset of a table
+    - used when we need a value which must not change wrt change in filters (like grand total in denominator)
+    - here repeating value is what is expected
+    - this kinda foreshadows the summation anamoly present before
+
+
+filter function - returns a table which represent a subset of another table
+                - FILTER(Table, FilterExpression)
+                - eg - ProductPrice > [Overall Avg Price]
+                - row context, checks row by row and yeets the rows which do not satisfy the filter
+                - handles more complex things than calculate, used in nested with sumx and calculate
+                - simple thumb rule, dont use filter if a calculate can get the job done, since filter can be bit computationally expensive
+
+iterator - x functions
+         - SUMX(Table, Expression)
+         - creates a temp column and finsds the value for eaach row
+         - we can access only columns from mentioned table, but sikeeee related()
+
+Time intelligence - Performance to Date
+                  - Previous Period
+                  - Running Total
+                  - cumulative function kindaaaaa
+                  - we can yeet blanks with the help of filter
+
+best practices - only use calculated columns when we need new coulumns, measure for aggregating values
+               - use explicit measures as much as possible
+               - use proper naming syntax for dax
+               - move calc upstream as much as possible
+               - try to minimise iterator functions since they are computationally expensive

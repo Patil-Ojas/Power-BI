@@ -1,0 +1,82 @@
+https://www.youtube.com/watch?v=UXhGRVTndQA
+https://www.youtube.com/watch?v=QGqn4hWAhBM
+
+https://www.youtube.com/watch?v=6cV3OwFrOkk
+https://www.youtube.com/watch?v=fZn83JRt4Nk
+
+
+https://www.coursera.org/learn/microsoft-power-platform-fundamentals
+https://www.coursera.org/projects/power-bi-desktop
+
+https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/
+
+
+
+
+
+
+If you torture your data long enough, it will confess to anything - Ronald Coase
+
+
+POWER BI - Pavan Lalwani
+
+
+business intelligence tool
+power query - cleans data for visualizations
+power pivot - data modelling
+power view - data visualizations
+power BI service - share these reports to others
+
+Google trends!
+
+normal preview check
+transfrom power query - preview check
+
+
+1. COLUMN CHART - basic editing, title modifying
+2. STACKED COLUMN CHART - legend, data labels
+3. PIE CHART - pick columns whcih have less than 5 values
+             - so in pie chart, legend extra work, so we use cosmetics - detail labels - all (40), then yeet legend 
+4. DONUT CHART - same as up
+5. FUNNEL CHART - higher size higher sales, basic funnel
+6. Ribbon - F (x axis years type of data)
+7. STACKED COLUMN - inlcude and exclude, used to compare two enititties, filter values visuallly
+8. IMPORT & EXPORT - How come data is exactly 70k? Select right click - show data pt sa table (dammmmmmmm) 
+                   - Exportable to csv 
+                   - we can edit permission for end user as required (options - current fule - report settings)
+ 
+
+
+SIMPLE MAP - we need geographical data type
+iffy because format needs to be exact,  column tools - data category 
+Drag states in location and then put sales in bubble size 
+
+FILLED MAP - profit in legend gives wayy to mny colors for presentations use, so we do regions
+           - If you want to give each state a color, put states in legend, we can see actual legend to crosscheck this
+           - k so hovering shows us state and region, if we want extra like profits we drop it in tooltips
+
+
+PIE CHART MAP - we put states then increase bubble size 
+              - Now we want to see each states category wise distribution - many many peace, sales into size we observer the proportion in most pie charts changes, see legend for more clarity
+
+
+FORMATTING MAP - in visual format, we can fk around with the color of bubble and even assign each state particular color
+               - we can also find around with the categrory labels, background etc
+               - inc dec bubble size, map controls like zoom, border, title, tool tip editing (hover to see effect)
+
+BACKGROUND CHANGES - state wise sales, visual style - arial, dark
+    
+MAP OF INDIA - we can have state, postal code, country etc data as input, if not recognized, go to data category
+             - basically if we have right data, ez to make a map
+
+MAP OF AUSTRALIA - this time we have small table, so we copy data and do enter data
+                 - we aint doing all that but careful it is not excel file
+
+
+
+TABLE AND MATRIX
+
+SIMPLE TABLE - just pick and put all u need in the columns option
+             - In order to sort asc or desc, just click the "sum of quantity" thing, req no of times
+
+FORMAT TABLE - yoink it - right click copy visual

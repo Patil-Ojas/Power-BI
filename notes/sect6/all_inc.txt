@@ -1,0 +1,113 @@
+
+Data visualisation woooo
+
+perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.
+
+three key questions - What type of data (geospatial (maps), time series(line charts), heirarchial (tree maps), financial (f))
+                    - What do we wanna communicate (comparison, composition, relationship, distributioin)
+                    - Who is our end user (analyst, boss, executive, general public)
+
+wakey wakey
+
+framework - dashboards can consolidate data, track key metrics, facilitate data driven story telling
+          - purpose, metrics, present data, eliminate cluster, layout, clear story
+
+Two reading patters - F and Z
+                    - so top left is most imp
+                    - so it will be logo, followed by most imp like kpis
+                    - get granular as u move on, ie start adding more details
+                    - so below symbol chart then bar them matric and so on
+                    - left bar to jump to maps, product details, customer details
+    
+Nice fonts - seigo ui (kpis)
+
+on object formatting - bar, column, area, line, ,combo, scatter, so we know these better
+                     - this is that good shit
+
+transperancy diff
+
+no trend line and forecast :/
+
+holy date diff
+
+kpi visuals
+
+tc of units
+
+filtering options - visual level
+                  - page level
+                  - report level (impacts entire dashboard)
+                  - drill thru (different)
+
+for any STATIC anamolies in the data, just deselect that option in filters xd
+
+anything over 3 or 4 filters - hide
+
+honestly shoudl have done based on the customer key but this looks better
+
+aight do not use something where primary key can be used lmao
+
+slicers - visual filters for report pages
+
+hasonevalue - honestly this will not be useful unless the databse is quite small, so like very low use cases sooooo, skipped
+
+guage chart - usedd to compare a value against a goal or a target
+            - we pair this up with slicers to give end user options 
+
+damm area chart hack
+
+drill up and drill down between levels of granularity in charts, like month week day - drill up, drill mode, forked down
+                                                                                     - dammm drill mode diffff
+                                                                                     - weeks can be buggy, so either disable drill mode :/ or get rid of start of week
+                                                                                     - edit most charts to have heirarchy cuz its cool
+
+drill through filter - select a filter on one page and drill thru to another page to find stats of that particular filter
+                     - also kinda diff, but idts  we gonna be able to use this
+
+report interactions - filter, highlight, none
+                    - powerbi guess ass
+                    - sometimes hihglight dont work cuz of top n, make real world tradeof if needed
+
+bookmarks - captures the current state of the report along with the filters and allows users to come bacc to it too using report actions
+          - so make bookmark then breate button then placeit 
+          - selct the bookmark in action, then make sure to use default, hover and press actions
+          - so we can also point out intriguing trends to showcase
+
+custom navigation - get excited
+                  - aight so we will need to use a new page to set these up
+                  - cleannnnn
+
+custom slicers - if we kinda wanna filter the entire dashboard for a certain filter with a button, like continent wise etc
+               - we dont wanna mess with other filters when filtering via these slicers so uncheck data 
+
+numeric range parameter - automatically does heavy duty dax creates measures and makes a slicer on its own 
+                        - now WE need to make measure acc to this generated measure for the slicer to work
+
+field parameter - simpler than numeric range, select fields for slicer, this creates a measure
+                - now connect this clicer with the visual by dragging in the new DAX, woo dynamic chart
+                - we can now format chart for each slicer value individually
+    
+custom tooltips - to get custom tooltips make new page page info tooltip, canva settings [225x425], canva background, then edit this but some bar chart, transperancy 0, annnd
+                - goddammmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+                - aight i see u 
+                - then hide the tooltip page
+
+importing custom visuals - insert, more visuals, appsource visuals (approved by microsoft)
+                         - animated bar race, add
+                         - ohhhhh the yt race thinggyyy
+                         - EXACTLY THE SAME THING LMFAOOO, nahhh we gotta do this shit
+                         - search up yt for banger visuals, this does feel childish tho
+
+managing roles - basically perms for viewing data
+               - defined on power bi desktop, but service is where we can assign these roles to people
+               - another crazzy thing
+
+
+mobile layout - we cant build in mobile view, we can inly assemble in it
+              - opens doors to power bi service
+
+
+best practice - 3 key questions
+              - simplicity, focus on intuitive user experience
+              - custom mobile layouts if we plan to publish
+

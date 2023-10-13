@@ -1,0 +1,99 @@
+
+
+we want data models, no data models means bad
+so bascially, without data modelling, we cannot seek the features of a different csv wrt another csv
+
+normalization - eliminates redudanct data, minimize erros and anamolies, simplifies queries, preserves data integrity
+
+each table serves a disctict and specific ppurpose only.
+
+in data modelling, two tyoes if tables - facts and dimensions
+facts - data tables, contain numeric values
+dimension - lookup tables, contain descriptive attributes
+
+the dimension tables are reffered to as master tables 
+the fact tables are referred to as transaction tables
+
+these are connected with the help of keys
+
+ok so now in the model view, we first declare all the primary keys
+and yeah mashing all of tables into a single table is not the math
+
+fact table - foreign key
+dimension table - primary key
+
+time to wire, two ways
+1. click and drag
+2. detect relationships / manage relationships
+
+autodetect ass
+
+matrix issue - ok so what happens is while making a matrix of two categories from different tables instead of nice values we get the grand total being repeated for all the items present
+
+fixes the matrix issue from before, i dunno if i mentioned it, i did not mention it
+trivially easy to edit delete and recreate relationships here, unlike fking sql
+
+star schema - single fact other dimension tables
+snowball schema - extension of star, relationships (chain) btwn lookup tables
+
+active/inactive relationships - there can only exist one active relationship btwn two tables, other inactive one will be inactive
+                              - both can never be active at the same time
+                              - to make other active, first deactive the active one by unchecking the box then activate the one u want, can also be toggled via properties
+                              - adv of inactive relation is more clarity, useful in dax functions
+
+
+cardinality is the uniqueness of the values in the column
+types - 1-1, 1-m, m-1, m-n, visible via symbol, also in properties
+
+well so we cant draw relationship between two fact tables, a SHARED dimension lookup table helps us establish that
+
+so if we try to full vlaues via a shared dimension, we get the required matrix
+however if we try to pull values via an unshared dimension table, we can see the repeating grand total value which indicates error
+
+filter context and flow - the cardinality arrow shows filter direction
+                        - ie the filter context only goes from a dimension table to a fact table not the other way
+                        - filter context can only go downstream not come upstream
+                        - pretty much repeating grand total = u messed up
+
+bi directional filtering - updating the cross filter direction from single to both allows the filter context to flow in either direction
+                         - can be edited via edit relationship or properties
+                         - so previously, we saw repeating grand total error for wrong combinations, however if both filter is used, no error comes
+                         - however this may lead to issues like missing records from a particular table which is quite wrong
+                         - we need to exercise caution using this since using multiple both filter context will lead to ambiguity, ie brainfuck, luckily power bi shows error for this
+                         - ambiguity means passing conflitcing filter context to a table
+
+long story short, stick to 1-1 and 1-m as much as possible, refrain from using m-m unless absolutely necessary
+
+
+hiding fields - makes fields inaccessible in report view, but still accessible in model and data views
+              - hide foreign keys from users so they are forced to filter based on primary keys
+              - we can hide table also
+              - u can see the final effect of thisin the report view data panel, that shit is goneee
+
+assignment filter flow - fuck
+                       - ok so while creating a matrix the product key from different queries leads to different matrices, now that im writing this down i appear to be a buffoon :/
+
+
+model layouts - just different views of the same model, not duplicates
+              - if we make change in one view all other views get changed, ie everything is synced
+              - if we wanna yeet, dont click delete from model, click remove from diagram
+              - add related tables option hard carry
+              - he has removed but i will be keeping this
+
+
+data formats and categories - data type determines how the data is stored
+                            - data formats determines how the data gets displayed
+                            - can be accessed via properties in model view or better use data view
+                            - change fields like date and currency, geographical shit like country continent etc
+                            - fun fact: county- area in british yada yada
+
+
+heirarchies - create like a heirarcy, highest to lowest for the report to be a banger (continent->country->region)
+
+best practices - focus on building normalized model, ie all tables shld have clear and distinct ppurpose
+               - organize dimension tables, prioritizing downstream 
+               - avoid m-n relations, if necessary gl hf
+               - hide primary keys from users cuz why not, now if sm shit is broken we know what we will be doing
+
+
+

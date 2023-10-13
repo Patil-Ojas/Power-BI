@@ -1,0 +1,89 @@
+
+ok so we loaded a dataset then went on to transform it
+then we loaded a source, renamed both of them
+
+make sure to 
+1. rename the data and source file each time
+2. check if the datatype are accurate, if not change them so that new comes in applied steps
+4. check if column headers are promoted.
+3. rename ur applied step-name (domestikku kanajo reference)
+
+this sets up the front end for report, data and model view.
+
+assignment 1 ✅
+
+different modes of data storage 
+1. import
+2. direct query
+3. composite model
+4. live connection
+
+ok so for getting values from an sql running datbase, we use import tbh normal way only just credentials needed.
+ok now extracting data from web, similar, in the end disable the load option form the queries drop down so the model doesnt get updated with these
+
+data qa and profiling
+in view tab - column quality, column distribution, column profiling 
+1. import the data, basic steps, click on view, column quality - this only shows for first 1000 columns, make it see for entire databse
+2. deal with errors with mostly usingt the idea thing which never works in other shits, this is gonna come back to bite me fo sho
+
+careful with add column tab and transofrm column tab
+
+text analysis - ez
+numerical analysis - we ususally yeet from aplied steps after use since it returns a single value, ie just for knowledge and exploratory analysis - ez
+
+
+date and time - almost always use it via add column since we rarely need to transform these
+              - start of week, name of datatype
+              - more user friendly the better, so Day.Monday > 1
+              - make sure while adding columns, it is based off the correct base
+
+if localilty is different - first make all text
+                          - update using locale to where the origin of file is
+
+rolling calendar - we gonna create a dynamic calender using m code
+                 - ok so basically we take the duration between the current date and the literal
+                 - cool thing that it is dynamic so if we come back tomorrow, it will be auto updated.
+                 - now convert to table and then basic steps
+                 - not needed for the dashboard but we will be keeping this 
+
+index columns and conditional columns - exploratory
+
+best practice for adding columns (ranked) - data source, power query, power bi front end, published reports
+                                          - the reason power query is in front is cuz it uses vertipack to compress the data and power bi front end dont do that compression
+                                          - not a strict rule but quite impactful while dealing with large and complex models
+
+Grouping and aggregating - tables not specified are lost, basic for simple, advance for multiple aggregation
+
+pivoting and unpivoting - turns distinct row values into columns and distinct column values into rows
+                        - transpose does the same thing but doesnt recognize unquie values, ie bruteforces it
+
+merging queries (makes wider) - adds columns, rarely used better to keep separate
+                              - usually avoided cuz of table relationships
+
+appending queries (makes taller) - difference btwn merging and appending is merging adds columns while appeding stacks or combines tables, assuming they have same struture and data type
+                                 - however the appended table relies on the base tables, ie we cant yeet the 3 basic queries used to append and make new query
+                                 - ok so to do this better, we move these files to a folder and connect to that folder
+                                 - in folder connecting, we give folder path, rather than previewing the data we preview the files in the folder
+                                 - we will have a first column which tells us from which file the data has come from
+                                 - so now we have, not only all three csvs combined without redundant csvs but also a functionality which allows us to automatically append the files dropped into the specified folder
+
+
+data source settings - if we update file perms or rename or change destination of files in use of power bi, it wont automatically update it, we will need to give its source again manually
+                     - two ways, either data source settings or the soure in applied steps
+
+
+data source paramters - allows us to dynamically change and update connection paths in power query
+                      - we will have to allow parameters first, then check via source, then in home manage parameters which will afftect our entire database
+                      - pretty much hardcoding server ip get changed to dynamic server ip
+                      - also allows us to modify parameters directly via the power query once the tables are loaded
+                      - lecture 43, f
+
+
+refresh report - ok so the refresh option exists which refreshes all queries if u wish to exclude sm1 from this then go into power query and check the box undex enable load
+
+importing the execl model to power bi - pretty much if u wre familiar with excel u can straight up import that shi
+
+best practices - get organized with storing and loading data
+               - disable report refresh for any static data sources
+               - when working with large tables, load only the data u need (meh)
+

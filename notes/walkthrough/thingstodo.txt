@@ -1,0 +1,55 @@
+
+select the required settings first and foremost - bottom two from relationship
+                                                - time intelligence one
+
+TRANSFORM DATA
+
+overall, basic 3 and checking each column what it has and if there are errors blanks (column profiling), etc
+long ass integers need to be text
+geospatial data - basic 3
+
+price - change dtype to currency
+
+calender - crucial, simply with the help of date, make the below fields
+         - Year, Month, Day Name
+         - Start of Year, Quarter, Month, Week, Day
+
+report refresh all except the data ones aa
+
+
+DATA MODELLING
+
+normalise, then find and mark primary keys
+then wire all pks to fks
+
+arrange in star / snowball schema
+
+inactive relationshipsn if need be
+
+stay devoid of m-m
+
+related tables option?
+
+change dtypes for viewing purposes
+
+
+DAX CODE
+
+now we in data view
+
+cc and measures
+
+make all measures 
+make measures table
+move all measues to measures table
+
+ok so wrt what we need in the report at the end, we need to make measures
+to make these we use dax, refer to 1st model for ideas and formulas
+
+
+VISUALIZATION
+
+3 key questions
+make rouhg design in head or something - use F/Z pattern
+make ample use of pages
+hostely just see reports and take inspiration, go thru the secct6 allinc too
